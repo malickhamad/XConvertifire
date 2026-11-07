@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Blog;
 use App\Models\User;
+use App\Observers\BlogObserver;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
@@ -24,10 +26,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        Blog::observe(BlogObserver::class);
+
         Gate::define('access-admin', fn (User $user): bool => $user->is_admin);
 
-        RateLimiter::for('admin-login', fn (Request $request) =>
-            Limit::perMinute(5)->by($request->ip())
+        RateLimiter::for('admin-login', fn (Request $request) => Limit::perMinute(5)->by($request->ip())
         );
     }
 }
