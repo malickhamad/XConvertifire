@@ -5,6 +5,10 @@
 
     RewriteEngine On
 
+    # Keep the production domain consistent with canonical URLs.
+    RewriteCond %{HTTP_HOST} ^www\.xconvertifire\.com$ [NC]
+    RewriteRule ^ https://xconvertifire.com%{REQUEST_URI} [R=301,L]
+
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]

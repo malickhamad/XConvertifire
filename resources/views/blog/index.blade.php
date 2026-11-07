@@ -13,7 +13,7 @@
 
 @endsection
 
-@section('canonical', $blogs->currentPage() > 1 ? $blogs->url($blogs->currentPage()) : url()->current())
+@section('canonical', 'https://xconvertifire.com/blog' . ($blogs->currentPage() > 1 ? '?page=' . $blogs->currentPage() : ''))
 
 @section('content')
 

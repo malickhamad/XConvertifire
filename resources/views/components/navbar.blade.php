@@ -172,7 +172,7 @@
       <div class="nav-container">
           <!-- Left: Logo -->
           <a href="{{ route('home') }}" class="brand-logo">
-              <img src="{{ asset('assets/images/logo.png') }}" alt="Convertifire" class="brand-logo-img">
+              <img src="{{ asset('assets/images/logo.webp') }}" alt="Convertifire" class="brand-logo-img" width="512" height="167">
           </a>
           <!-- Center: Links Pill -->
           <nav class="nav-links-wrapper" id="navLinksWrapper" aria-label="Main navigation">

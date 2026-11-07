@@ -6,7 +6,7 @@
             <!-- Brand Info -->
             <div class="col-lg-4 col-md-6">
                 <a href="{{ route('home') }}" class="footer-logo">
-                    <img src="{{ asset('assets/images/logo.png') }}" alt="X Convertifire" class="footer-logo-img" width="55%">
+                    <img src="{{ asset('assets/images/logo.webp') }}" alt="X Convertifire" class="footer-logo-img" width="512" height="167" loading="lazy" decoding="async" style="width: 55%; height: auto;">
                 </a>
                 <p class="footer-text">
                     Free online tools to compress, resize, crop and convert images, edit PDFs, and extract audio from videos.

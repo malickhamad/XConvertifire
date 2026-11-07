@@ -4,7 +4,7 @@
 
     {{-- Main Pages --}}
     <url>
-        <loc>{{ route('home') }}</loc>
+        <loc>{{ rtrim(route('home'), '/') . '/' }}</loc>
     </url>
 
     <url>
@@ -77,6 +77,14 @@
 
     <url>
         <loc>{{ route('word.pdf.index') }}</loc>
+    </url>
+
+    <url>
+        <loc>{{ route('watermark.remover') }}</loc>
+    </url>
+
+    <url>
+        <loc>{{ route('metadata.remover') }}</loc>
     </url>
 
 </urlset>

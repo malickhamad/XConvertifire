@@ -12,6 +12,11 @@ class PageController extends Controller
         return view('pages.home');
     }
 
+    public function imageToJpg()
+    {
+        return view('pages.image_to_jpg');
+    }
+
     public function contact()
     {
         return view('pages.contact');

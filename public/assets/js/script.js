@@ -1,11 +1,17 @@
 
         // Initialize AOS Animations
-        AOS.init({
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
             once: true,
             offset: 50,
             duration: 800,
             easing: 'ease-out-cubic',
-        });
+            });
+        } else {
+            document.querySelectorAll('[data-aos]').forEach(function(element) {
+                element.removeAttribute('data-aos');
+            });
+        }
 
         // =========================================
         // Dynamic Navbar Scroll Logic

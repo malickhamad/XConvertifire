@@ -1,5 +1,7 @@
 @extends('components.app')
 
+@section('canonical', 'https://xconvertifire.com/')
+
 @section('meta')
     <title>FREE Online File Converter: Convert Files | XConvertifire</title>
     <meta name="description"
@@ -50,14 +52,13 @@
 @endsection
 
 @section('content')
+    <main id="main-content">
     <!-- Hero Section -->
     <section class="hero-section">
 
         <!-- Background Video -->
-        <video class="hero-bg-video" autoplay loop muted playsinline
-            poster="{{ asset('assets/video/convertifire-poster.jpg') }}">
-            <source src="{{ asset('assets/video/Convertifire.mp4') }}" type="video/mp4">
-            Your browser does not support the video tag.
+        <video class="hero-bg-video" loop muted playsinline preload="none" aria-hidden="true" tabindex="-1">
+            <source data-src="{{ asset('assets/video/Convertifire.mp4') }}" type="video/mp4">
         </video>
 
         <!-- Dark Overlay over Video -->
@@ -67,22 +68,22 @@
             <div class="row">
                 <div class="col-lg-8"> <!-- Column to keep content on the left side -->
 
-                    <div data-aos="fade-right" data-aos-duration="1000">
+                    <div>
                         <span class="tag-badge"><i class="fas fa-magic text-light me-2"></i> Free Online Toolkit</span>
                     </div>
 
-                    <h1 class="hero-title" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">
+                    <h1 class="hero-title">
                         Free Online File Tools for Images, PDFs and Video
                     </h1>
 
-                    <p class="hero-subtitle" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+                    <p class="hero-subtitle">
                         Compress, resize, crop and convert images,
                         edit PDF documents, and extract audio
                         from videos with XConvertifire's free tools.
                     </p>
 
                     <!-- Tool Category Navigation -->
-                    <div class="filter-pills" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">
+                    <div class="filter-pills">
                         <button type="button" class="pill active" data-target="tools">All</button>
                         <button type="button" class="pill" data-target="images">Images</button>
                         <button type="button" class="pill" data-target="videos">Videos</button>
@@ -410,8 +411,8 @@
                             platform.</p>
                     </div>
                     <!-- 3rd Video Placement inside Bento Box -->
-                    <video class="bento-video" autoplay loop muted playsinline>
-                        <source src="{{ asset('assets/video/Convertifire.mp4') }}" type="video/mp4">
+                    <video class="bento-video" loop muted playsinline preload="none" aria-hidden="true" tabindex="-1">
+                        <source data-src="{{ asset('assets/video/Convertifire.mp4') }}" type="video/mp4">
                     </video>
                 </div>
             </div>
@@ -463,29 +464,9 @@
             </div>
         </div>
     </section>
+    </main>
 @endsection
 
 @section('scripts')
-    <script>
-        $(document).ready(function() {
-
-            $('.pill').click(function() {
-
-                $('.pill').removeClass('active');
-                $(this).addClass('active');
-
-                const targetId = $(this).data('target');
-                const targetElement = document.getElementById(targetId);
-
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-
-            });
-
-        });
-    </script>
+    <script src="{{ asset('assets/js/home.js') }}"></script>
 @endsection
