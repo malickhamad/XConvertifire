@@ -51,9 +51,13 @@
         }
     };
 
-    if (document.readyState === 'complete') {
-        scheduleVideos();
-    } else {
-        window.addEventListener('load', scheduleVideos, { once: true });
-    }
+    // Decorative media starts after visitor intent, leaving the first load
+    // available for content and tools instead of two large MP4 transfers.
+    const intentEvents = ['pointerdown', 'keydown', 'wheel', 'touchstart'];
+    const onIntent = () => {
+        intentEvents.forEach(event => window.removeEventListener(event, onIntent));
+        if (document.readyState === 'complete') scheduleVideos();
+        else window.addEventListener('load', scheduleVideos, { once: true });
+    };
+    intentEvents.forEach(event => window.addEventListener(event, onIntent, { passive: true }));
 })();

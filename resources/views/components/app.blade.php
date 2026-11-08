@@ -3,17 +3,7 @@
 
 <head>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VB6Q6D313F"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-VB6Q6D313F');
-    </script>
-
-    <!-- Google Tag Manager -->
+    <!-- Google Tag Manager owns the GA4 tag; avoid loading the same tag twice. -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -37,7 +27,7 @@
     <meta name="robots" content="@yield('robots', 'index, follow')">
     <link rel="canonical" href="@yield('canonical', 'https://xconvertifire.com' . (rtrim(request()->getPathInfo(), '/') ?: '/'))">
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset(request()->routeIs('home') ? 'assets/vendor/bootstrap-home.min.css' : 'assets/vendor/bootstrap-5.3.2.min.css') }}" rel="stylesheet">
     @include('components.style-links')
     <meta name="google-site-verification" content="1lIfyOhBm9UiZSK6O3WSAzfYT9h_L2ceRwixYlpsS6s" />
     <meta name="google-adsense-account" content="ca-pub-2172091253082286">

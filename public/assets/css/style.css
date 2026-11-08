@@ -72,7 +72,7 @@ body {
 }
 
 .btn-action {
-    background-color: #3b82f6;
+    background-color: #1d4ed8;
     /* Blue Button */
     color: #fff;
     border: none;
@@ -610,6 +610,8 @@ body {
 }
 
 .footer-logo {
+    width: 180px;
+    max-width: 100%;
     font-size: 2rem;
     font-weight: 800;
     color: #fff;
@@ -617,6 +619,14 @@ body {
     letter-spacing: 1px;
     margin-bottom: 20px;
     display: inline-block;
+}
+
+.footer-logo-img {
+    display: block;
+    width: 180px;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 512 / 167;
 }
 
 .footer-text {

@@ -451,16 +451,13 @@
 
         <div class="marquee-container" data-aos="fade-up" data-aos-delay="100">
             <div class="marquee-content">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
-                    alt="AWS">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg" alt="Azure">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" alt="Google Cloud">
-                {{-- <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Apple_logo_black.svg" alt="Apple"> --}}
-                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
-                    alt="AWS">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg" alt="Azure">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" alt="Google Cloud">
+                <img src="{{ asset('assets/images/brands/aws.svg') }}" alt="AWS" width="75" height="45" loading="lazy" decoding="async">
+                <img src="{{ asset('assets/images/brands/azure.svg') }}" alt="Azure" width="156" height="45" loading="lazy" decoding="async">
+                <img src="{{ asset('assets/images/brands/google-cloud.svg') }}" alt="Google Cloud" width="291" height="45" loading="lazy" decoding="async">
+                <img src="{{ asset('assets/images/brands/apple.svg') }}" alt="Apple" width="37" height="45" loading="lazy" decoding="async">
+                <img src="{{ asset('assets/images/brands/aws.svg') }}" alt="AWS" width="75" height="45" loading="lazy" decoding="async">
+                <img src="{{ asset('assets/images/brands/azure.svg') }}" alt="Azure" width="156" height="45" loading="lazy" decoding="async">
+                <img src="{{ asset('assets/images/brands/google-cloud.svg') }}" alt="Google Cloud" width="291" height="45" loading="lazy" decoding="async">
             </div>
         </div>
     </section>
@@ -468,5 +465,5 @@
 @endsection
 
 @section('scripts')
-    <script src="{{ asset('assets/js/home.js') }}"></script>
+    <script src="{{ asset('assets/js/home.js') }}?v={{ filemtime(public_path('assets/js/home.js')) }}" defer></script>
 @endsection

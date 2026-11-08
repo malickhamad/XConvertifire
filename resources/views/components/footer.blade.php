@@ -6,7 +6,7 @@
             <!-- Brand Info -->
             <div class="col-lg-4 col-md-6">
                 <a href="{{ route('home') }}" class="footer-logo">
-                    <img src="{{ asset('assets/images/logo.webp') }}" alt="X Convertifire" class="footer-logo-img" width="512" height="167" loading="lazy" decoding="async" style="width: 55%; height: auto;">
+                    <img src="{{ asset('assets/images/logo.webp') }}" alt="X Convertifire" class="footer-logo-img" width="180" height="59" loading="lazy" decoding="async">
                 </a>
                 <p class="footer-text">
                     Free online tools to compress, resize, crop and convert images, edit PDFs, and extract audio from videos.
@@ -34,7 +34,7 @@
 
             <!-- Image Tools -->
             <div class="col-lg-2 col-md-6">
-                <h4 class="footer-title">Image Tools</h4>
+                <h2 class="footer-title">Image Tools</h2>
                 <ul class="footer-links">
                     <li><a href="{{ route('image.compressor') }}">Compress Image</a></li>
                     <li><a href="{{ route('image.resizer') }}">Resize Image</a></li>
@@ -47,7 +47,7 @@
 
             <!-- Video & PDF Tools -->
             <div class="col-lg-2 col-md-6">
-                <h4 class="footer-title">More Tools</h4>
+                <h2 class="footer-title">More Tools</h2>
                 <ul class="footer-links">
                     <li><a href="{{ route('video.to.audio') }}">Video to Audio</a></li>
                     <li><a href="{{ route('pdf.editor') }}">PDF Editor</a></li>
@@ -58,7 +58,7 @@
 
             <!-- Company -->
             <div class="col-lg-2 col-md-6">
-                <h4 class="footer-title">Company</h4>
+                <h2 class="footer-title">Company</h2>
                 <ul class="footer-links">
                     <li><a href="{{ route('about-us') }}">About Us</a></li>
                     <li><a href="{{ route('contact') }}">Contact Support</a></li>
@@ -68,7 +68,7 @@
 
             <!-- Legal -->
             <div class="col-lg-2 col-md-6">
-                <h4 class="footer-title">Legal</h4>
+                <h2 class="footer-title">Legal</h2>
                 <ul class="footer-links">
                     <li><a href="{{ route('privacy-policy') }}">Privacy Policy</a></li>
                     <li><a href="{{ route('terms-and-conditions') }}">Terms of Service</a></li>

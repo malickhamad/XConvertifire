@@ -1,12 +1,13 @@
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="{{ asset('assets/vendor/inter.css') }}">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset(request()->routeIs('home') ? 'assets/vendor/fontawesome-home.min.css' : 'assets/vendor/fontawesome-6.4.0.min.css') }}">
     <!-- AOS Animation CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preload" href="{{ asset('assets/vendor/aos-2.3.1.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="{{ asset('assets/vendor/aos-2.3.1.css') }}" rel="stylesheet"></noscript>
 
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.min.css') }}?v={{ filemtime(public_path('assets/css/style.min.css')) }}">
 
     @if (request()->routeIs('contact', 'contact.store'))
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
