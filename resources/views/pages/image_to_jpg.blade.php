@@ -1,19 +1,25 @@
 @extends('components.app')
 
+@section('canonical', 'https://xconvertifire.com/image-to-jpg')
+
 @section('meta')
 
-<title>Image Converter</title>
+<title>Image to JPG Converter Online | XConvertifire</title>
 
 <meta name="description"
-    content="Convert multiple images to PNG, JPG, JPEG, WebP or PDF online quickly and easily." />
+    content="Convert JPG, PNG, WebP, GIF and SVG images to JPG online. JPG is selected by default; adjust quality, convert multiple files and download the results." />
 
-<meta property="og:title" content="Image Converter">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Image to JPG Converter Online | XConvertifire">
 <meta property="og:description"
-    content="Convert multiple images to PNG, JPG, JPEG, WebP or PDF online.">
+    content="Convert JPG, PNG, WebP, GIF and SVG images to JPG online. JPG is selected by default; adjust quality and convert multiple files.">
+<meta property="og:url" content="https://xconvertifire.com/image-to-jpg">
+<meta property="og:site_name" content="XConvertifire">
 
-<meta property="twitter:title" content="Image Converter">
-<meta property="twitter:description"
-    content="Convert multiple images to PNG, JPG, JPEG, WebP or PDF online.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Image to JPG Converter Online | XConvertifire">
+<meta name="twitter:description"
+    content="Convert JPG, PNG, WebP, GIF and SVG images to JPG online. JPG is selected by default; adjust quality and convert multiple files.">
 
 @endsection
 
@@ -26,7 +32,7 @@
 
         <div class="crop-breadcrumb">
 
-            <a href="#">
+            <a href="{{ route('home') }}">
                 <i class="fas fa-home"></i>
                 Home
             </a>
@@ -35,7 +41,7 @@
                 <i class="fas fa-chevron-right"></i>
             </span>
 
-            <span>Image Converter</span>
+            <span>Image to JPG</span>
 
         </div>
 
@@ -51,17 +57,16 @@
 
             <span class="crop-small-badge">
                 <i class="fas fa-file-image"></i>
-                Image Converter
+                Image to JPG Converter
             </span>
 
             <h1>
                 Convert Images<br>
-                <span>To Any Format.</span>
+                <span>To JPG Online.</span>
             </h1>
 
             <p>
-                Convert one or multiple images to JPG, JPEG, PNG,
-                WebP or PDF quickly and easily.
+                Convert supported images to JPG in your browser. JPG is selected by default; adjust the quality or choose another available output format.
             </p>
 
         </div>
@@ -74,7 +79,7 @@
             </div>
 
             <h3>
-                Upload your images
+                Choose images to convert to JPG
             </h3>
 
             <p class="crop-upload-text">
@@ -798,6 +803,31 @@
 </section>
 
 
+
+<section class="container py-5" aria-labelledby="image-to-jpg-guide">
+    <div class="row g-4">
+        <div class="col-lg-8">
+            <h2 id="image-to-jpg-guide" class="text-white fw-bold mb-3">How to convert an image to JPG</h2>
+            <ol class="text-secondary ps-3">
+                <li class="mb-2">Choose one or more supported image files. The upload area lists JPG, JPEG, PNG, WebP, GIF and SVG, with a displayed limit of 50 MB per image.</li>
+                <li class="mb-2">JPG is selected as the starting output. You can adjust image quality or select another format in Conversion Settings.</li>
+                <li class="mb-2">Select Convert Images and wait for your browser to process the files.</li>
+                <li>Download the converted image. When converting several images together, download the ZIP containing the results.</li>
+            </ol>
+
+            <h2 class="text-white fw-bold h4 mt-4 mb-3">JPG conversion details</h2>
+            <p class="text-secondary">JPG and JPEG use the same image encoding. JPG is widely supported and works well for many photographs, but it does not retain transparency. Transparent areas are filled with white, and JPEG quality settings can affect fine detail and file size. Start with the original image when converting again.</p>
+            <p class="text-secondary mb-0">GIF and SVG files rely on your browser's image decoding and canvas support. Animated GIFs do not keep their animation in a standard JPG image. Check the downloaded file if the source uses animation, transparency or browser-specific SVG features.</p>
+        </div>
+        <div class="col-lg-4">
+            <div class="p-4 rounded border border-secondary h-100">
+                <h2 class="text-white fw-bold h5 mb-3">Need another image format?</h2>
+                <p class="text-secondary">This page starts with JPG selected. The Image Converter explains the available output choices and their browser-specific limits.</p>
+                <a href="{{ route('image.converter') }}" class="btn btn-outline-primary">Explore the Image Converter</a>
+            </div>
+        </div>
+    </div>
+</section>
 
 <section class="crop-benefits-section">
 

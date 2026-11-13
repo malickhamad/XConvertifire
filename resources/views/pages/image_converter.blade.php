@@ -593,6 +593,9 @@
                                         contain PNG data despite a <code>.gif</code> filename. WebP export
                                         depends on browser support.
                                     </p>
+                                    <p class="small text-secondary mt-3">
+                                        Need a JPG-first workflow? <a href="{{ route('image.to.jpg') }}">Convert images to JPG online</a> with JPG selected by default.
+                                    </p>
 
                                 </div>
                             </div>

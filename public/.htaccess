@@ -5,8 +5,11 @@
 
     RewriteEngine On
 
+    # Catch the public-path alias directly when this file is running at the web root.
+    RewriteRule ^x-convertifire/public(?:/(.*))?$ https://xconvertifire.com/$1 [R=301,L,NE,NC]
+
     # Use the original request, not a path changed by Hostinger's internal rewrite.
-    RewriteCond %{THE_REQUEST} \s/+x-convertifire/public(?:/([^\s?]*))?(?:[?\s]) [NC]
+    RewriteCond %{THE_REQUEST} \s/+x-convertifire/public(?:/([^\s?]*))?(?:\?[^\s]*)?\s [NC]
     RewriteRule ^ https://xconvertifire.com/%1 [R=301,L,NE]
 
     RewriteCond %{HTTP_HOST} ^www\.xconvertifire\.com$ [NC]

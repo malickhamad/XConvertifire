@@ -1,9 +1,9 @@
 @extends('components.app')
 
 @section('meta')
-    <title>Free Metadata Remover Online | XConvertifire</title>
+    <title>Metadata Remover for Images and PDFs | XConvertifire</title>
     <meta name="description"
-        content="Remove metadata from images and PDFs with XConvertifire. Strip EXIF, GPS, author, and other hidden data in your browser. Preview and download cleaned files.">
+        content="Remove common metadata from JPG, PNG, WebP images or PDF files in your browser. Preview and download a cleaned copy. Files up to 20 MB.">
 @endsection
 
 @section('content')
@@ -29,10 +29,10 @@
                     </span>
 
                     <h1>Metadata Remover<br>
-                        <span>Clean Hidden Data From Files.</span>
+                        <span>Clean Common File Metadata.</span>
                     </h1>
 
-                    <p>Upload an image or PDF, remove EXIF, GPS, author and other metadata, and download a clean copy.</p>
+                    <p>Re-encode a JPG, PNG or WebP image to remove common embedded metadata, or rebuild a PDF with standard document information fields cleared. Processing runs in your browser.</p>
                 </div>
 
                 <div class="crop-upload-box" id="uploadBox" role="button" tabindex="0"
@@ -148,8 +148,7 @@
 
                             <div class="wm-tip mb-4">
                                 <i class="fas fa-lightbulb me-2"></i>
-                                <strong>Tip:</strong> Removing metadata strips EXIF, GPS, author, device info, and hidden
-                                tags.
+                                <strong>Tip:</strong> Image cleanup redraws and re-encodes the image. PDF cleanup creates a new document, clears common document information fields and sets fixed dates.
                             </div>
 
                             <!-- Action -->
@@ -168,8 +167,7 @@
                             </div>
 
                             <small class="d-block text-secondary mt-3">
-                                For images, EXIF and GPS data are removed. For PDFs, document info
-                                and metadata are stripped while page content is preserved.
+                                This removes common metadata fields, but it is not a forensic guarantee that every possible hidden or application-specific field is gone. Review the downloaded file when complete metadata removal matters.
                             </small>
                         </div>
                     </div>
@@ -178,6 +176,31 @@
             </div>
         </section>
 
+        <section class="container py-5" aria-labelledby="metadata-remover-guide">
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <h2 id="metadata-remover-guide" class="text-white fw-bold mb-3">What this metadata remover supports</h2>
+                    <p class="text-secondary">The upload control accepts JPG/JPEG, PNG, WebP and PDF files up to 20 MB. For an image, the tool reads the file in your browser, draws it onto a canvas and re-encodes it. This process removes common embedded image data such as EXIF fields, including GPS coordinates when present. The image is re-encoded, so JPEG or WebP output may differ slightly from the original.</p>
+
+                    <h3 class="text-white fw-bold h5 mt-4">How PDF metadata is handled</h3>
+                    <p class="text-secondary">For a PDF, the tool builds a new document by copying its pages, clearing standard fields such as title, author, subject, keywords, creator and producer, and setting fixed creation and modification dates. It keeps the page content, but rebuilding a PDF may not preserve every interactive feature, digital signature, annotation, attachment or application-specific property.</p>
+
+                    <h3 class="text-white fw-bold h5 mt-4">What the result does not guarantee</h3>
+                    <p class="text-secondary mb-0">The tool targets common embedded metadata. It does not inspect every possible file structure or guarantee forensic removal of every hidden field. Check the downloaded copy before sharing it if complete metadata removal is important.</p>
+                </div>
+                <div class="col-lg-4">
+                    <div class="p-4 rounded border border-secondary h-100">
+                        <h2 class="text-white fw-bold h5 mb-3">How to use the tool</h2>
+                        <ol class="text-secondary ps-3 mb-0">
+                            <li class="mb-2">Choose a supported image or PDF under 20 MB.</li>
+                            <li class="mb-2">Review the preview and any detected metadata fields.</li>
+                            <li class="mb-2">Select Remove Metadata and wait for the cleaned copy.</li>
+                            <li>Download the result and review it before sharing.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <style>
@@ -719,9 +742,9 @@
                     }
                     resultReady = true;
                     updateButtons();
-                    status('Metadata removed. Preview is clean. Click Download to save.');
+                    status('Common image metadata removed from the re-encoded copy. Click Download to save.');
                     $('#metadataSummary').html(
-                        '<span class="text-success"><i class="fas fa-check-circle me-1"></i>Metadata stripped. Ready to download.</span>'
+                        '<span class="text-success"><i class="fas fa-check-circle me-1"></i>Common image metadata removed. Ready to download.</span>'
                     );
                     // Store the clean blob for download
                     window.__cleanBlob = blob;
@@ -772,9 +795,9 @@
 
                     resultReady = true;
                     updateButtons();
-                    status('PDF metadata removed. Other pages were kept unchanged. Click Download to save.');
+                    status('Standard PDF information fields cleared. Other pages were kept unchanged. Click Download to save.');
                     $('#metadataSummary').html(
-                        '<span class="text-success"><i class="fas fa-check-circle me-1"></i>Metadata stripped. Ready to download.</span>'
+                        '<span class="text-success"><i class="fas fa-check-circle me-1"></i>Standard PDF information fields cleared. Ready to download.</span>'
                     );
                 } catch (err) {
                     console.error(err);
