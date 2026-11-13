@@ -1,5 +1,7 @@
 @extends('components.app')
 
+@section('canonical', 'https://xconvertifire.com/image-converter')
+
 @section('meta')
     <title>FREE Image Converter: Convert Images Online | XConvertifire</title>
 

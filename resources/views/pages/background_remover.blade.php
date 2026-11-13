@@ -1,5 +1,7 @@
 @extends('components.app')
 
+@section('canonical', 'https://xconvertifire.com/background-remover')
+
 @section('meta')
     <title>FREE Background Remover: Erase Background | XConvertifire</title>
     <meta name="description"
@@ -2539,4 +2541,4 @@
         window.addEventListener('scroll', () => navbar && navbar.classList.toggle('scrolled', scrollY > 50));
     </script>
 @endsection
-    
+
