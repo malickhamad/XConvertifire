@@ -29,7 +29,7 @@
     <section class="about-hero">
 
         <!-- Background Video -->
-      <video class="about-hero-bg-video" autoplay loop muted playsinline preload="metadata">
+      <video autoplay class="about-hero-bg-video" autoplay loop muted playsinline preload="metadata">
     <source src="{{ asset('assets/video/convertifire.mp4') }}" type="video/mp4">
 </video>
         <!-- Overlay -->
