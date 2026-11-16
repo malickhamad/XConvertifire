@@ -18,8 +18,11 @@ class BlogObserver
 
         $urls = [];
         $indexNow = app(IndexNow::class);
-        $original = $blog->getRawOriginal();
-        if (! $blog->wasRecentlyCreated && $this->isPublic($original)) {
+        // Eloquent syncs the original attributes before firing `saved`, so
+        // getRawOriginal() already contains the new values here. Restore the
+        // changed fields from the pre-save snapshot to notify the old URL.
+        $original = array_merge($blog->getAttributes(), $blog->getPrevious());
+        if ($blog->getPrevious() !== [] && isset($original['slug']) && $this->isPublic($original)) {
             $urls[] = $indexNow->url('blog/'.$original['slug']);
         }
         if ($this->isPublic($blog->getAttributes())) {
