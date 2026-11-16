@@ -41,6 +41,7 @@
                     <li><a href="{{ route('image.cropper') }}">Crop Image</a></li>
                     <li><a href="{{ route('image.rotator') }}">Rotate Image</a></li>
                     <li><a href="{{ route('image.converter') }}">Image Converter</a></li>
+                    <li><a href="{{ route('image.to.jpg') }}">Image to JPG</a></li>
                     <li><a href="{{ route('image.background_remover') }}">Remove Background</a></li>
                 </ul>
             </div>

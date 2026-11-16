@@ -190,6 +190,7 @@
                       <a href="{{ route('image.cropper') }}"><i class="fas fa-crop-alt"></i> Crop Image</a>
                       <a href="{{ route('image.rotator') }}"><i class="fas fa-sync-alt"></i> Rotate Image</a>
                       <a href="{{ route('image.converter') }}"><i class="fas fa-file-export"></i> Image Converter</a>
+                      <a href="{{ route('image.to.jpg') }}"><i class="fas fa-image"></i> Image to JPG</a>
                       <a href="{{ route('video.to.audio') }}"><i class="fas fa-music"></i> Video to Audio</a>
                       <a href="{{ route('pdf.editor') }}"><i class="fas fa-file-pdf"></i> PDF Editor</a>
                       <a href="{{ route('image.background_remover') }}"><i class="fas fa-eraser"></i> Remove
