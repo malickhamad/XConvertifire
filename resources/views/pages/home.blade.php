@@ -57,8 +57,8 @@
     <section class="hero-section">
 
         <!-- Background Video -->
-        <video class="hero-bg-video" loop muted playsinline preload="none" aria-hidden="true" tabindex="-1">
-            <source data-src="{{ asset('assets/video/Convertifire.mp4') }}" type="video/mp4">
+        <video autoplay class="hero-bg-video" loop muted playsinline preload="none" aria-hidden="true" tabindex="-1">
+            <source src="{{ asset('assets/video/convertifire.mp4') }}" type="video/mp4">
         </video>
 
         <!-- Dark Overlay over Video -->
@@ -411,8 +411,8 @@
                             platform.</p>
                     </div>
                     <!-- 3rd Video Placement inside Bento Box -->
-                    <video class="bento-video" loop muted playsinline preload="none" aria-hidden="true" tabindex="-1">
-                        <source data-src="{{ asset('assets/video/Convertifire.mp4') }}" type="video/mp4">
+                    <video autoplay class="bento-video" loop muted playsinline preload="none" aria-hidden="true" tabindex="-1">
+                        <source src="{{ asset('assets/video/convertifire.mp4') }}" type="video/mp4">
                     </video>
                 </div>
             </div>
